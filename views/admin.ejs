@@ -1,0 +1,140 @@
+<Style>
+.create_t{
+display: block;
+margin-top: 20px;
+}
+.addMatch{
+  margin-top: 50px;
+}
+.sms{
+  margin-top: 50px;
+}
+.back-button {
+		display: block;
+		background-color: #333;
+		color: #fff;
+		text-align: center;
+		padding: 10px;
+		border-radius: 5px;
+		text-decoration: none;
+		max-width: 200px;
+		margin: 0 auto;
+    margin-top: 20px;
+	}
+
+	.back-button:hover {
+		background-color: #ef9712;
+		cursor: pointer;
+    animation-name: bounce;
+    animation-timing-function: ease;
+	}
+  .navbar-nav
+  {
+    color: #131212;
+  }
+
+</Style>
+
+
+
+<div class="create_t" data-aos="fade-up" data-aos-duration="3000">
+  <div class="container text-center">
+    <div class="row align-items-start">
+      <div class="col">
+        <h2>Create turnament</h2>
+      </div>
+    </div>
+  </div>
+<form method="POST" action="/create_turnament">
+  <input type="text" id="turnament_name" name="turnament_name" required class="form-control" placeholder="Turnament name:" >
+
+  <div class="input-group">
+  <input type="text" id="admin" name="admin" required aria-label="Last name" class="form-control" placeholder="Admin">
+  <input type="password" id="admin_pass" name="admin_pass" required aria-label="Last name" class="form-control" placeholder="ADMIN pass">
+</div>
+
+  
+  <input type="text" id="location" name="location" required class="form-control" placeholder="location">
+
+  <button type="submit" class="back-button">Create Turnament</button>
+</form>
+</div>
+
+<div class="addMatch" data-aos="flip-down" data-aos-duration="3000">
+  <form action="/addMatch" method="POST">
+    <div class="container text-center">
+      <div class="row align-items-start">
+        <div class="col">
+          <h2>Add matches</h2>
+        </div>
+      </div>
+    <div class="input-group mb-3">
+    <label for="tournament_name" class="input-group-text">Tournament:</label>
+    <select  name="tournament_name" class="form-select" id="inputGroupSelect01">
+      <% tournaments.forEach(function(tournament) { %>
+        <option value="<%= tournament.turnament_name %>"><%= tournament.turnament_name %></option>
+      <% }); %>
+    </select>
+  </div>
+
+  
+
+    <div class="input-group mb-3">
+    <input type="text" name="team1_name" placeholder="team1_name"><br />
+    <span class="input-group-text">VS</span>
+    <input type="text" name="team2_name" placeholder="team_name">
+    </div>
+
+    <div class="input-group">
+    <input type="text" id="round" name="round" required  aria-label="Last name" class="form-control" placeholder="round" />
+    <input type="text" id="date" name="date" required  aria-label="Last name" class="form-control" placeholder="date" />
+    </div>
+    <div styl="align-items=center">
+    <button type="submit" value="submit"  class="back-button">set time table</button>
+  </div>
+  </form>
+</div>
+
+<div style="border: #333;margin: 10px 20px 10px 20px;">
+  <p style="border-style: solid ;border-radius: 20px;">
+    As an administrator, you have the ability to make important announcements on our website. Whether you need to communicate changes to tournament schedules, provide updates on registration deadlines, or share any other important information with participants, our announcement feature makes it easy. Simply log in to your admin account and create a new announcement. You can customize the message, s even links to provide additional context. All participants will receive a notification when you post an announcement, ensuring that everyone stays informed and up-to-date. So, take advantage of this powerful tool and keep your participants in the loop with important updates and information!
+  </p>
+</div>
+
+
+
+<button  class="back-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" >Anounce</button>
+
+<div class="offcanvas offcanvas-bottom h-auto" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Anounce to all</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body small">
+    <div class="sms">
+      <div class="create_t">
+        <div class="container text-center">
+          <div class="row align-items-start">
+            <div class="col">
+              <h2>Anounce to all</h2>
+            </div>
+          </div>
+        </div>
+        <form method="POST" action="/announcement">
+          <div class="container text-center">
+            <div class="form-floating">
+              <textarea class="form-control" placeholder="Leave a comment here" id="message" name="message" style="height: 100px"></textarea>
+              <label for="message">Announcement</label>
+            </div>
+            <div class="row align-items-end">
+              <div class="col">
+                <input type="submit" value="Send">         
+              </div>
+              <p>This announcement will be sent to all players.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+

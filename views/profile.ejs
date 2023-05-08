@@ -1,0 +1,148 @@
+<style>
+	body {
+		background-color: #262525;
+		font-family: Arial, sans-serif;
+		padding: 20px;
+	}
+
+	h1 {
+		text-align: center;
+		color: #eee5e5;
+		margin-bottom: 20px;
+	}
+
+	.profile {
+		background-color: #313030;
+		border-radius: 5px;
+		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+		padding: 20px;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.profile-image {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 20px;
+	}
+
+	.profile-image img {
+		max-width: 200px;
+		border-radius: 50%;
+	}
+
+	.profile-info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 20px;
+	}
+
+	.profile-info h2 {
+		color: #eee5e5;
+		margin-bottom: 10px;
+	}
+
+	.profile-info ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		color: #eee5e5;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.profile-info li {
+		display: flex;
+		align-items: center;
+		color: #eee5e5;
+		margin-bottom: 10px;
+	}
+
+	.profile-info li span {
+		font-weight: bold;
+		margin-right: 10px;
+	}
+
+	.back-button {
+		display: block;
+		background-color: #333;
+		color: #fff;
+		text-align: center;
+		padding: 10px;
+		border-radius: 5px;
+		text-decoration: none;
+		max-width: 200px;
+		margin: 0 auto;
+	}
+
+	.back-button:hover {
+		background-color: #ef9712;
+		cursor: pointer;
+	}
+
+</style>
+</head>
+<body>
+<h1>Player Profile</h1>
+<div class="profile" data-aos="flip-right" data-aos-duration="3000">
+	<div class="profile-image">
+		<img src="https://via.placeholder.com/200x200" alt="Profile Image">
+	</div>
+	<div class="profile-info">
+		<h2><%= player.name %></h2>
+		<ul>
+			<li><span>Email:</span><%= player.Email %></li>
+			<li><span>User ID:</span><%= player.userid %></li>
+			<li><span>Phone:</span> <%= player.phone %></li>
+			<li><span>Age:</span><%= player.info.age %><</li>
+			<li><span>DOB:</span><%= player.info.DOB %></li>
+			<li><span>Injuries:</span><%= player.info.enjures %> </li>
+			<li><span>Games:</span><%= player.games %></li>
+		</ul>
+	</div>
+	<a href="/" class="back-button">Back to Dashboard</a>
+
+	
+
+	  <p>
+		<button class="back-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample" style="margin-top: 25px;">
+			Participant ongoing Turnaments
+		</button>
+	  </p>
+	  
+	  <div style="min-height: 120px; ">
+		<div class="collapse collapse-horizontal" id="collapseWidthExample">
+		  <div class="card card-body" style="width: 300px;">
+	<form action="/addParticipant" method="POST">
+
+		<div class="input-group flex-nowrap">
+			<span class="input-group-text" id="addon-wrapping">Your</span>
+		<input type="text" id="team_name" name="team_name" required class="form-control" placeholder="Team name"  />
+		</div>
+		<label for="turnament_name">Tournament:</label>
+		<select id="turnament_id" name="turnament_id" class="form-select">
+			<% tournaments.forEach(function(tournament) { %>
+			  <option value="<%= tournament._id %>"><%= tournament.turnament_name %></option>
+			<% }); %>
+		  </select><br />
+
+		<div class="input-group flex-nowrap">
+			<span class="input-group-text" id="addon-wrapping">Total</span>
+		<input type="number" id="wins" name="wins" class="form-control" placeholder="wins" /><br />
+		</div>
+		<div class="container text-center">
+			<div class="row align-items-end">
+			  <div class="col">
+				<button type="submit" value="submit" class="btn btn-success">Enter</button>
+			  </div>
+			</div>
+		  </div>
+	  </form>
+		  </div>
+		</div>
+	  </div>
+	  <a href="/logout" value="" class="back-button">logout</a>
+	  
+</div>

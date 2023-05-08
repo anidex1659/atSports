@@ -1,0 +1,230 @@
+<style>
+img {
+  display: block;
+  max-width: 100%;
+}
+
+:root {
+  --page-bg: #222;
+  --btn-bg: hsla(252, 100%, 80%, 10%);
+  --overlay: hsla(252, 100%, 40%, 50%);
+}
+
+body {
+  margin: 0;
+  background:#222;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: rgb(10, 0, 0);
+}
+
+
+
+h2 {
+  font-size: clamp(2.8rem, 2rem + 3vw, 4.8rem);
+  font-weight: 900;
+  line-height: 1;
+  color: aliceblue;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: clamp(1.25rem, 1rem + 3vw, 2.5rem);
+  font-weight: 400;
+  color: #f8f3f3;
+  line-height: 1.6;
+}
+
+
+
+button:focus,
+button:hover {
+  background: white;
+  color: var(--page-bg);
+  cursor: pointer;
+}
+
+.hero_img_container {
+  position: relative;
+  /* isolation: isolate; */
+}
+
+.hero_img {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  height: 100dvh;
+  width: 100dvw;
+  background-color: var(--overlay);
+  background-blend-mode: multiply;
+}
+
+.hero {
+  display: grid;
+  height: calc(400px + 25vmin);
+ place-items: center;
+}
+
+.hero > * {
+  grid-area: 1 / -1;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+span:hover {
+  background-color: var(--color-3);
+  transform: translateY(-15px);
+  transition: 0.8s cubic-bezier(0.48, 0.3, 0.42, 0.92);
+  box-shadow: 0px 0px 25px 4px var(--color-3);
+}
+
+.heroc {
+  margin-bottom: 30px;
+}
+
+.pop-card-container,
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pop-card {
+  background-color: rgba(200, 200, 200, 0.2);
+  display: inline-flex;
+  aspect-ratio: 1 / 1.5;
+  width: 10vw;
+  backdrop-filter: blur(5px);
+  border-radius: 1vw;
+  padding: 0.5vw;
+  margin: 1vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  margin: top 500px;
+  display: inline-block;
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn btn-primary {
+  margin: 6rem;
+  padding: 1rem 2rem;
+  background: var(--btn-bg);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.6;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  transition: background-color 300ms;
+}
+
+
+.card-title {
+  color: aliceblue;
+}
+
+.card-text{
+  color: aliceblue;
+}
+
+</style>
+<div class="hero_img_container">
+    <img src="/img/sport.jpg" class="hero_img"></img>
+    
+
+    <div class="heroc">
+      <section class="hero">
+        <div class="hero__content" data-aos="fade-right" data-aos-duration="3000">
+          <h2>@sports</h2>
+          <h4>Experience the thrill of competition </h4>
+          
+        </div>
+        
+      </section>
+    </div>
+
+
+    <div class="container-flued pop-card-container">
+      <span class="pop-card" >Tournaments</span>
+      <span class="pop-card" >Players </span>
+      <span class="pop-card" >Teams</span>
+    </div>
+
+<div>
+    <% Turnaments.forEach(function(Turnaments) { %>
+    <div class="card-container" data-aos="flip-up" data-aos-duration="3000">
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title" style="color: aliceblue">
+            <%= Turnaments.turnament_name %>
+          </h5>
+          <p class="card-text" style="color: aliceblue">
+            With supporting text below as a natural lead-in to additional
+            content.
+          </p>
+          <a href="/tournament/<%= Turnaments._id %>" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+</div>
+</div>
+
+<div class="row" style="margin-top: 30px;" data-aos="flip-up" data-aos-duration="3000">
+  <div class="col-lg-8 mx-auto">
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title" >Lionel Messi scores hat-trick in Barcelona win</h5>
+        <p class="card-text">Lionel Messi scored his 50th career hat-trick as Barcelona came from behind to beat Real Sociedad 4-2 in La Liga. The Argentine superstar scored two free-kicks and a penalty as Barca moved back to within seven points of leaders Atletico Madrid. Messi has now scored 33 goals in 35 appearances in all competitions this season.</p>
+        <a href="https://www.espn.in/football/" class="card-link">Read more</a>
+      </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Novak Djokovic defeats Rafael Nadal in Italian Open thriller</h5>
+        <p class="card-text">Novak Djokovic came out on top in a thrilling semi-final against Rafael Nadal at the Italian Open, winning 6-3, 6-7 (4), 6-2. The world number one will now face Diego Schwartzman in the final. Djokovic is aiming to win his fifth Italian Open title, while Schwartzman is looking for his first ATP Masters 1000 title.</p>
+        <a href="https://www.espn.in/football/" class="card-link">Read more</a>
+      </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Lewis Hamilton wins Spanish Grand Prix</h5>
+        <p class="card-text">Lewis Hamilton secured his third win of the season with a dominant victory in the Spanish Grand Prix. The Mercedes driver led from start to finish, finishing over 20 seconds ahead of Red Bull's Max Verstappen. Hamilton's teammate, Valtteri Bottas, finished third. Hamilton now leads the drivers' championship by 14 points.</p>
+        <a href="https://www.espn.in/football/" class="card-link">Read more</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+    
+   
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

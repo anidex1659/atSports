@@ -1,0 +1,82 @@
+<style>
+    body {
+  margin: 0;
+  background:#222;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: rgb(10, 0, 0);
+}
+
+h1 {
+    font-size: calc(1.375rem + 1.5vw);
+    color: aliceblue;
+}
+h2{
+    color: aliceblue;
+}
+tr{
+    color: aliceblue;
+} 
+
+.profile {
+		background-color: #313030;
+		border-radius: 5px;
+		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+		padding: 20px;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+  .card{
+    margin: 20px 30px 20px 30px;
+    background-color: #313030;
+  }
+  .card:hover{
+    background-color: #f88120
+  }
+
+  .card-header{
+    color: aliceblue;
+}
+  
+
+</style>
+
+ 
+
+  <% tournaments.forEach(function(tournament) { %>
+    <div class="card" data-aos="zoom-in-right" data-aos-duration="3000">
+      <h2 class="card-header"><%= tournament.turnament_name %></h2>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Round</th>
+              <th scope="col">Team 1</th>
+              <th scope="col">Team 2</th>
+              <th scope="col">Date</th>
+              <th scope="col">Result</th>
+              <th scope="col">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% tournament.matches.forEach(function(match) { %>
+              <tr scope="row">
+                <td><%= match.round %></td>
+                <td><%= match.team1 %></td>
+                <td><%= match.team2 %></td>
+                <td><%= match.date %></td>
+                <td><%= match.result %></td>
+                <td><%= match.notes %></td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <% }); %>                                                                                                    
+</div>
+
+
+
+

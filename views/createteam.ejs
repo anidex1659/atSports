@@ -1,0 +1,178 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+
+  * {
+    font-family: 'poppins', sans-serif;
+  }
+
+  body {
+    background-image: url("../img/login(3).jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+  }
+
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+  }
+
+  .container {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px 0 15px;
+
+  }
+
+  span {
+    color: #fff;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 10px 0;
+  }
+
+  header {
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 10px 0;
+  }
+
+  .input-field .input {
+    height: 45px;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 15px;
+    padding: 0 0 0 45px;
+    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+  }
+
+  i {
+    position: relative;
+    top: -33px;
+    left: 17px;
+    color: #fff;
+  }
+
+  ::-webkit-input-placeholder {
+    color: #fff;
+  }
+
+  .submit {
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    height: 45px;
+    outline: none;
+    width: 100%;
+    color: black;
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: .3s;
+  }
+
+  .submit:hover {
+    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .two-col {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #fff;
+    font-size: small;
+    margin-top: 10px;
+  }
+
+  .one {
+    display: flex;
+  }
+
+  label a {
+    text-decoration: none;
+    color: #fff;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+<div class="box">
+  <div class="container">
+    <form action="/create-team" method="post">
+      <div class="top">
+        <span>Have an account?</span>
+        <header>Create your team</header>
+      </div>
+      <div class="input-field" data-aos="fade-right" data-aos-duration="3000">
+        <input type="text" class="input" placeholder="collage" id="collage" name="collage">
+        <i class='bx bx-user'></i>
+      </div>
+      <div class="input-field" data-aos="fade-right" data-aos-duration="3000">
+        <input type="text" class="input" placeholder="team name" id="name" name="name">
+        <i class='bx bx-lock-alt'></i>
+      </div>
+
+      <div class="input-field" data-aos="fade-right" data-aos-duration="3000">
+        <input type="text" class="input" placeholder="player 1" id="player1" name="players[]">
+        <i class='bx bx-lock-alt'></i>
+      </div>
+      <div class="input-field" data-aos="fade-right" data-aos-duration="3000">
+        <input type="text" class="input" placeholder="player 2" id="player2" name="players[]">
+        <i class='bx bx-lock-alt'></i>
+      </div>
+      <div class="input-field" data-aos="fade-right" data-aos-duration="3000">
+        <input type="text" class="input" placeholder="player 3" id="player3" name="players[]">
+        <i class='bx bx-lock-alt'></i>
+      </div>
+      <div class="input-field" data-aos="fade-right" data-aos-duration="3000">
+        <input type="text" class="input" placeholder="player 4" id="player4" name="players[]">
+        <i class='bx bx-lock-alt'></i>
+      </div>
+      <div class="input-field" data-aos="fade-right" data-aos-duration="3000">
+        <input type="text" class="input" placeholder="player 5" id="player5" name="players[]">
+        <i class='bx bx-lock-alt'></i>
+      </div>
+      <div class="input-field" data-aos="fade-right" data-aos-duration="3000">
+        <input type="text" class="input" placeholder="player 6" id="player6" name="players[]">
+        <i class='bx bx-lock-alt'></i>
+      </div>
+      <div class="input-field" data-aos="fade-right" data-aos-duration="3000">
+        <input type="text" class="input" placeholder="player 7" id="player7" name="players[]">
+        <i class='bx bx-lock-alt'></i>
+      </div>
+      <div class="input-field" data-aos="fade-right" data-aos-duration="3000">
+        <input type="text" class="input" placeholder="player 8" id="player8" name="players[]">
+        <i class='bx bx-lock-alt'></i>
+      </div>
+      <div class="input-field" data-aos="fade-right" data-aos-duration="3000">
+        <input type="text" class="input" placeholder="player 9" id="player9" name="players[]">
+        <div class="input-field">
+          <div class="input-field" data-aos="fade-right" data-aos-duration="3000">
+            <input type="text" class="input" placeholder="player 10" id="player10" name="players[]">
+            <div class="input-field">
+              <div class="input-field" data-aos="fade-right" data-aos-duration="3000">
+                <input type="text" class="input" placeholder="player 11" id="player11" name="players[]">
+                <div class="input-field">
+                  <input type="submit" class="submit">
+                </div>
+    </form>
+  </div>
+</div>
